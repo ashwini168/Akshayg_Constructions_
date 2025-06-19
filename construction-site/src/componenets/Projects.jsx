@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <section className="section">
       <h2>Featured Projects</h2>
-      <p>Take a look at our successfullyhry completed construction projects.</p>
+      <p>Take a look at our successfully completed construction projects.</p>
 
       <div className="card-grid">
         <Link to="/project1" className="services-link">
