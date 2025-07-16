@@ -1,36 +1,32 @@
 // src/components/Services.jsx
-import { Link } from 'react-router-dom';
+import React from 'react';
+
 
 const Services = () => {
   return (
-    <section className="section">
+    <section className="services-section">
       <h2>Our Services</h2>
-      <p>Explore the wide range of construction and consulting services we offer.</p>
-
-      <div className="card-grid">
-        <Link to="/service1" className="services-link">
-          <div className="card">
-            <img src="/images/service1.jpg" alt="Service 1" className="project-img" />
-            <h3>Architectural Design</h3>
-            <p>Modern and sustainable design tailored to your vision.</p>
-          </div>
-        </Link>
-
-        <Link to="/service2" className="services-link">
-          <div className="card">
-            <img src="/images/service2.jpg" alt="Service 2" className="project-img" />
-            <h3>Residential Construction</h3>
-            <p>Reliable and efficient home construction services.</p>
-          </div>
-        </Link>
-
-        <Link to="/service3" className="services-link">
-          <div className="card">
-            <img src="/images/service3.jpg" alt="Service 3" className="project-img" />
-            <h3>Project Consulting</h3>
-            <p>Expert consultation for budget-friendly and smart execution.</p>
-          </div>
-        </Link>
+      <div className="card-wrapper">
+        <div className="service-card">
+          <img src="/images/Project-1-view-1.jpg" alt="Residential" />
+          <h3>Residential Construction</h3>
+          <p>We deliver custom homes with innovative designs and sustainable materials.</p>
+        </div>
+        <div className="service-card">
+          <img src="/images/Project-1-view-2.jpg" alt="Commercial" />
+          <h3>Commercial Buildings</h3>
+          <p>Office complexes and retail spaces built to match your business needs.</p>
+        </div>
+        <div className="service-card">
+          <img src="/images/in4.jpg" alt="Interior" />
+          <h3>Interior Design</h3>
+          <p>Modern, aesthetic interior spaces crafted by our expert designers.</p>
+        </div>
+        <div className="service-card">
+          <img src="/images/in5.jpg" alt="Renovation" />
+          <h3>Renovation Projects</h3>
+          <p>Revamp your existing structures with our expert remodeling services.</p>
+        </div>
       </div>
     </section>
   );

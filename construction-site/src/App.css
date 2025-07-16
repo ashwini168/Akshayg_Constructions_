@@ -1,13 +1,14 @@
-/* app.css (Polished & Clean Construction Style Layout with Services Pages) */
+/* app.css (Updated with BankGothic Md BT for headings and Century Gothic for body text) */
 
 :root {
-  --primary: #2E4053;
-  --accent: #F5B041;
-  --background: #FAFAFA;
-  --text-main: #2C3E50;
-  --text-muted: #7F8C8D;
-  --heading: #1A252F;
-  --font-family-base: 'Segoe UI', sans-serif;
+  --primary: #1F2833;
+  --accent: #45A29E;
+  --background: #F2F2F2;
+  --text-main: #0B0C10;
+  --text-muted: #666;
+  --heading: #0B0C10;
+  --font-family-base: 'Century Gothic', sans-serif;
+  --font-family-bold: 'BankGothic Md BT', sans-serif;
 }
 
 * {
@@ -20,73 +21,155 @@ body {
   font-family: var(--font-family-base);
   background-color: var(--background);
   color: var(--text-main);
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 18px;
 }
 
-header.header {
+.header {
   background-color: var(--primary);
   color: white;
-  padding: 1.5rem 2rem;
+  padding: 1.2rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-family: var(--font-family-bold);
+  font-weight: 700;
 }
 
-header.header h1 {
+.header-transparent {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: var(--font-family-bold);
 }
 
-nav a {
-  margin: 0 1rem;
+.menu-toggle {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+nav a,
+.dropdown a {
   color: white;
-  text-decoration: none;
   font-weight: 500;
+  text-decoration: none;
+  margin: 0.5rem 1rem;
   transition: color 0.3s ease;
+  font-family: var(--font-family-base);
 }
 
-nav a:hover {
+nav a:hover,
+.dropdown a:hover {
   color: var(--accent);
 }
 
-.hero {
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.dropdown a {
+  color: #333;
+}
+
+.hero-content h1,
+.section h2,
+.services-heading,
+.card h3,
+.project-card h3,
+.about-card h3,
+.service-card h3,
+.press-section h2,
+.projects-heading {
+  font-family: var(--font-family-bold);
+  font-weight: 700;
+}
+
+.hero-video {
   position: relative;
-  text-align: center;
+  height: 100vh;
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  height: 450px;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-}
-
-.hero-text {
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 600px;
-}
-
-.section {
-  padding: 4rem 2rem;
   text-align: center;
 }
 
-.section h2 {
+.hero-bg-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(0.7);
+}
+
+.hero-content {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-family: var(--font-family-base);
+}
+
+.section,
+.services-section,
+.projects-section,
+.about-section {
+  padding: 5rem 3rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.section h2,
+.services-heading,
+.projects-heading {
+  font-size: 2.5rem;
   color: var(--heading);
-  font-size: 2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   position: relative;
   display: inline-block;
 }
 
-.section h2::after {
+.section h2::after,
+.services-heading::after,
+.projects-heading::after {
   content: "";
   display: block;
   width: 50%;
@@ -96,41 +179,96 @@ nav a:hover {
   border-radius: 2px;
 }
 
-.section p {
-  max-width: 800px;
-  margin: 0 auto;
+.section p,
+.services-description,
+.projects-description {
   color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  font-family: var(--font-family-base);
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  padding: 0 20px;
   margin-top: 2rem;
 }
 
-.card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  border-top: 4px solid var(--accent);
+.card,
+.project-card,
+.about-card,
+.service-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  text-align: center;
+  padding-bottom: 1rem;
+  z-index: 1;
+  gap: 2rem;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+.card:hover,
+.project-card:hover,
+.about-card:hover,
+.service-card:hover {
+  transform: scale(1.04) translateY(-12px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
-.project-img {
+.card h3,
+.project-card h3,
+.about-card h3,
+.service-card h3 {
+  font-size: 1.4rem;
+  margin: 1rem 0 0.5rem;
+  color: #1f1f1f;
+}
+
+.card p,
+.project-card p,
+.about-card p,
+.service-card p,
+.section p,
+.services-description,
+.projects-description,
+.press-card p {
+  font-family: var(--font-family-base);
+  font-weight: 400;
+}
+
+.project-img,
+.project-card img,
+.about-card img,
+.service-card img {
   width: 100%;
-  border-radius: 10px;
-  height: 200px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  height: 700px;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px 4px 0 0;
   margin-bottom: 1rem;
+}
+
+button.cta {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-family-base);
+}
+
+button.cta:hover {
+  background-color: #e49d2f;
 }
 
 .quote-form {
@@ -145,21 +283,7 @@ nav a:hover {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-button.cta {
-  background-color: var(--accent);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button.cta:hover {
-  background-color: #e49d2f;
+  font-family: var(--font-family-base);
 }
 
 footer.footer {
@@ -169,78 +293,23 @@ footer.footer {
   padding: 1rem;
   font-size: 0.9rem;
   margin-top: 3rem;
-  border-top: 2px solid var(--accent);
+  border-top: 3px solid var(--accent);
+  font-family: var(--font-family-bold);
 }
 
-.services-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* === Shared Section Styling === */
-.services-section, .projects-section {
-  padding: 60px 20px;
-  background-color: #f9f9f9;
+.press-section {
+  padding: 9rem 5rem;
+  background-color: #ffffff;
   text-align: center;
+  font-family: var(--font-family-base);
 }
 
-.services-heading, .projects-heading {
-  font-size: 2.5rem;
-  color: #222;
-  margin-bottom: 10px;
+.press-section h2 {
+  font-weight: 700;
+  font-family: var(--font-family-bold);
 }
 
-.services-description, .projects-description {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-/* === Card Grid Layout === */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 0 20px;
-}
-
-/* === Card Styling === */
-.card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  padding-bottom: 20px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.project-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-/* === Card Text === */
-.card h3 {
-  margin: 16px 20px 10px;
-  font-size: 1.4rem;
-  color: #1f1f1f;
-}
-
-.card p {
-  margin: 0 20px;
-  color: #666;
-  font-size: 0.95rem;
-}
-
-/* === Link Styling (optional reset) === */
-.services-link {
-  text-decoration: none;
-  color: inherit;
+.press-section p {
+  font-weight: 400;
+  font-family: var(--font-family-base);
 }
