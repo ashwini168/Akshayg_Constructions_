@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 const Footer = () => (
     <footer className="footer">
-      &copy; {new Date().getFullYear()} BuildWise Construction. All rights reserved.
+      &copy; {new Date().getFullYear()} akshayg Construction. All rights reserved.
     </footer>
   )
   

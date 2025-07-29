@@ -8,7 +8,10 @@ const Header = () => {
 
   return (
     <header className="header header-transparent">
-      <div className="logo">A k s h a y G Construction</div>
+      <div class="tagline">
+         <span class="main-name">A k s h a y G</span><br></br>
+         <span class="sub-name">Constructions</span>
+     </div>
 
       <div className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
         <div className="bar"></div>

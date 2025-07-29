@@ -7,10 +7,10 @@ const HeroVideo = () => {
     <section className="hero-video">
       <video autoPlay muted loop playsInline className="hero-bg-video">
         <source src="/images/interior.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        
       </video>
       <div className="hero-content">
-        <h1>Welcome to AK Construction</h1>
+        <h1>Welcome to Akshay G Constructions</h1>
         <p>Building a better tomorrow with precision and trust.</p>
       </div>
     </section>  
